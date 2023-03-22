@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cezar.HelloController">
+    <Tab style="-fx-background-color: #C0C0C0;" text="  Зашифрувати  ">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <TextField fx:id="text" layoutX="89.0" layoutY="48.0" prefHeight="25.0" prefWidth="501.0" promptText="Введіть текст" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="48.0" prefHeight="25.0" prefWidth="72.0" style="-fx-border-color: black;" text="Текст" />
+            <Label layoutX="9.0" layoutY="89.0" prefHeight="25.0" prefWidth="72.0" style="-fx-border-color: black;" text="Ключ(число)" />
+            <TextField fx:id="key" layoutX="88.0" layoutY="89.0" promptText="Введіть ключ" />
+            <Label fx:id="label" alignment="CENTER" layoutX="9.0" layoutY="14.0" prefHeight="25.0" prefWidth="582.0" style="-fx-border-color: black;" text="Зашифрувати за допомогою шифра Цезаря" />
+            <TextArea fx:id="textArea" editable="false" layoutX="11.0" layoutY="130.0" prefHeight="198.0" prefWidth="576.0" style="-fx-border-color: black;" wrapText="true" />
+            <Button layoutX="177.0" layoutY="337.0" mnemonicParsing="false" onAction="#AddInFile" style="-fx-background-color: #C0C0C0;" text="Помістити зашифрований текст до файлу">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
+         <Button layoutX="255.0" layoutY="89.0" mnemonicParsing="false" onAction="#Encrypt" style="-fx-background-color: #C0C0C0;" text="Зашифрувати">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+        </AnchorPane>
+    </Tab>
+   <Tab style="-fx-background-color: #C0C0C0;" text="Зашифрувати файл">
+     <content>
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <children>
+               <Label fx:id="label3" alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="25.0" prefWidth="466.0" style="-fx-border-color: black;" text="Шлях до файлу">
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+               </Label>
+               <Button alignment="CENTER" layoutX="494.0" layoutY="54.0" mnemonicParsing="false" onAction="#Encrypt2" style="-fx-background-color: #C0C0C0;" text="Зашифрувати">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <TextField fx:id="key3" layoutX="129.0" layoutY="54.0" prefHeight="25.0" prefWidth="347.0" promptText="Введіть ключ" />
+               <Label alignment="CENTER" layoutX="10.0" layoutY="54.0" prefHeight="25.0" prefWidth="110.0" style="-fx-border-color: black;" text=" Ключ (Число)">
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+               </Label>
+               <Button alignment="CENTER" layoutX="493.0" layoutY="14.0" mnemonicParsing="false" onAction="#ChoseFile2" style="-fx-background-color: #C0C0C0;" text="Вибрати файл">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <TextArea fx:id="textArea3" editable="false" layoutX="10.0" layoutY="90.0" prefHeight="274.0" prefWidth="580.0" visible="false" />
+            </children>
+         </AnchorPane>
+     </content>
+   </Tab>
+    <Tab style="-fx-background-color: #C0C0C0;" text="  Розшифрувати файл  ">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <Label fx:id="label2" layoutX="94.0" layoutY="21.0" prefHeight="25.0" prefWidth="394.0" style="-fx-border-color: black;" />
+            <Button layoutX="227.0" layoutY="102.0" mnemonicParsing="false" onAction="#Decrypt" prefHeight="25.0" style="-fx-background-color: #C0C0C0;" text="Розшифрувати файл">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
+            <TextArea fx:id="textArea2" editable="false" layoutX="12.0" layoutY="143.0" prefHeight="222.0" prefWidth="576.0" wrapText="true" />
+            <TextField fx:id="key2" layoutX="95.0" layoutY="57.0" prefHeight="25.0" prefWidth="153.0" promptText="Введіть ключ" style="-fx-border-color: black;" />
+            <Label alignment="CENTER" layoutX="12.0" layoutY="58.0" prefHeight="25.0" prefWidth="80.0" style="-fx-border-color: black;" text="Ключ (Число)" />
+            <Label alignment="CENTER" layoutX="12.0" layoutY="21.0" prefHeight="25.0" prefWidth="80.0" style="-fx-border-color: black;" text="Шлях" />
+            <Button layoutX="493.0" layoutY="20.0" mnemonicParsing="false" onAction="#Chosser" prefHeight="25.0" style="-fx-background-color: #C0C0C0;" text="Вибрати файл">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
+        </AnchorPane>
+    </Tab>
+</TabPane>
